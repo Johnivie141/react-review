@@ -39,7 +39,13 @@ class App extends Component {
         </div>
         <div className="comp-container">
           <Form addItem={this.addItem}  />
-          <List list={this.state.todo} removeItem={this.removeItem} />
+          {
+            this.state.todo.length
+            ?
+            <List list={this.state.todo} removeItem={this.removeItem} />
+            :
+            null
+          }
         </div>
       </div>
     );
